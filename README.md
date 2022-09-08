@@ -1,5 +1,15 @@
 # Create a Pinterest style grid
 
+## Getting images from Unsplash
+
+To use the Unsplash API you need to create a developer account. Head over to: https://unsplash.com/developers
+
+Copy the `Access Key` and paste it to the `.env` file
+
+```
+VUE_APP_ENV_UNSPLASH_ACCESS_KEY=UNSPLASH_ACCESS_KEY_HERE
+```
+
 ## References: 
 
 - https://github.com/ratracegrad/vue-Pinterest
