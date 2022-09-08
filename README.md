@@ -1,4 +1,11 @@
-# pinterest
+# Create a Pinterest style grid
+
+## References: 
+
+- https://github.com/ratracegrad/vue-Pinterest
+- https://github.com/starkwang/vue-virtual-collection
+- https://github.com/jchn/simple-masonry-layout
+
 
 ## Project setup
 ```
