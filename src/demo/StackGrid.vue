@@ -16,6 +16,9 @@
         <div class="yt-wrapper" v-else-if="image.video">
           <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
         </div>
+        <div class="text-wrapper" v-else-if="image.text">
+          <p>Ea eiusmod sint non deserunt enim occaecat dolor. Nostrud voluptate voluptate elit dolore anim enim nulla culpa officia voluptate sit fugiat quis. Et excepteur ex velit culpa cillum.</p>
+        </div>
         <div v-else>
           <img :src="image.urls.small" :alt="image.alt_description" />
           <p>{{image.alt_description}}</p>

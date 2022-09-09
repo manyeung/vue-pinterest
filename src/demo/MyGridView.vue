@@ -1,5 +1,17 @@
 <template>
-  <my-grid :images="images" v-slot="{items}">
+  <my-grid :images="images" 
+    :breakpoints="{
+      'gte 1280': {
+        columns: 3,
+        gutter: 15,
+      },
+      'default': {
+        columns: 2,
+        gutter: 15,
+      }
+    }" 
+    v-slot="{items}"
+  >
     <my-grid-scroller :items="items" v-slot="{renderItems}">
       <my-grid-view-item v-for="(item) in renderItems" :key="item.id"
         :width="item.rect.width"

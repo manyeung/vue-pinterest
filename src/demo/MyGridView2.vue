@@ -1,5 +1,17 @@
 <template>
-  <my-grid :images="images" v-slot="{items}">
+  <my-grid :images="images" 
+    :breakpoints="{
+      'gte 1280': {
+        columns: 3,
+        gutter: 15,
+      },
+      'default': {
+        columns: 2,
+        gutter: 15,
+      }
+    }" 
+    v-slot="{items}"
+  >
     <my-grid-scroller :items="items" v-slot="{renderItems}">
       <my-grid-view-item v-for="(item) in renderItems" :key="item.id"
         :width="item.rect.width"
@@ -18,6 +30,9 @@
         </div>
         <div class="yt-wrapper" v-else-if="item.video">
           <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls loop></video>
+        </div>
+        <div class="text-wrapper" v-else-if="item.text">
+          <p>Ea eiusmod sint non deserunt enim occaecat dolor. Nostrud voluptate voluptate elit dolore anim enim nulla culpa officia voluptate sit fugiat quis. Et excepteur ex velit culpa cillum.</p>
         </div>
         <div v-else>
           <img :src="item.urls.small" :alt="item.alt_description" />

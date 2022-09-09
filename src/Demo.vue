@@ -90,9 +90,9 @@ export default {
             }, 
             {
               id: uuidv4(),
-              youtube:1,
-              width:100,
-              height:66
+              text:1,
+              width:500,
+              height:500
             }, 
             {
               id: uuidv4(),
@@ -120,12 +120,12 @@ export default {
 
 <style>
 .container {
-  width: 1200px;
+  width: 800px;
   margin: 0 auto;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1280px) {
   .container {
-    width: 800px;
+    width: 1200px;
     margin: 0 auto;
   }
 }
@@ -168,5 +168,13 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.text-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background: green;
+  color: #fff;
 }
 </style>
