@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    environment: my-vue-pinterest
+    environment: production
 
     strategy:
       matrix:
@@ -26,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - name: NPM build
+    - name: NPM Build
       env:
         VUE_APP_ENV_UNSPLASH_ACCESS_KEY: ${{ secrets.VUE_APP_ENV_UNSPLASH_ACCESS_KEY }}
       run: npm run build
