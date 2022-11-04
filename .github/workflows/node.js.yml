@@ -19,13 +19,29 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    #- uses: actions/checkout@v3
-    #- name: Use Node.js ${{ matrix.node-version }}
-    #  uses: actions/setup-node@v3
-    #  with:
-    #    node-version: ${{ matrix.node-version }}
-    #    cache: 'npm'
-    #- run: npm install
-    #- run: npm run build
-    #- run: ls
-    - run: printenv
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+    - run: npm run build
+    - name: List Files
+      run: |
+        ls
+        ls dist
+
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v1.0.4
+      with:
+        path: dist
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v2.1.2
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v1.2.2
