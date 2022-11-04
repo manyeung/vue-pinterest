@@ -54,4 +54,5 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v2.1.2
       - name: Deploy GitHub Pages site
+        id: deployment
         uses: actions/deploy-pages@v1.2.2
